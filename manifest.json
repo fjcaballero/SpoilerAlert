@@ -14,6 +14,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
+      "css": ["alertStyle.css"],
       "js": ["checkURL.js"],
       "run_at" : "document_end"
     }

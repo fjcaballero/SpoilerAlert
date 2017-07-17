@@ -13,12 +13,12 @@ var defaultConfig = {
             "name": "Game of Thrones",
             "day": 1,
             "watch": true
-        },
+        }/*,
         {
             "name": "The Walking Dead",
             "day": -1,
             "watch": true
-        }
+        }*/
     ]
 };
 

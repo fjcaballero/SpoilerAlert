@@ -11,12 +11,12 @@ var defaultConfig = {
             "name": "Game of Thrones",
             "day": 1,
             "watch": true
-        },
+        }/*,
         {
             "name": "The Walking Dead",
             "day": -1,
             "watch": true
-        }
+        }*/
     ]
 };
 
@@ -54,5 +54,39 @@ function checkSeries(page){
 function block(page, serie){
     var msg = "Hoy se ha estrenado un capítulo de " + serie.name 
     + '\n'+ "¿Seguro que quiere visitar " + page + "?";
-    alert(msg);
+    //alert(msg);
+    createPopUp(msg);
+}
+
+function createPopUp(msg){
+    var darkBody = document.getElementsByTagName("body")[0].appendChild(document.createElement("div"));
+    darkBody.className = "darkBody";
+    
+    var div = document.getElementsByTagName("body")[0].appendChild(document.createElement("div"));
+    div.id = "spoilerAlert";
+    div.className = "customAlert";
+
+    var header = div.appendChild(document.createElement("div"));
+    header.className = "spoilerAlertHeader";
+    header.innerText = "Spoiler Alert!!";
+
+    var content = div.appendChild(document.createElement("div"));
+    content.className = "spoilerAlertContent";
+    content.innerText = msg;
+
+    var acceptBtn = div.appendChild(document.createElement("button"));
+    acceptBtn.className = "spoilerAlertButton";
+    acceptBtn.innerText = "Continuar";
+    acceptBtn.onclick = function(){
+        document.getElementsByTagName("body")[0].removeChild(div);
+        document.getElementsByTagName("body")[0].removeChild(darkBody);
+    }
+
+    var cancelBtn = div.appendChild(document.createElement("button"));
+    cancelBtn.className = "spoilerAlertButton";
+    cancelBtn.innerText = "Volver";
+    cancelBtn.onclick = function(){
+        window.history.back();
+    }
+
 }
