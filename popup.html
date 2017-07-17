@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Spoiler Alert Config</title>
+    <style>
+        .serieCheckbox{
+            width: 150px;
+        }
+
+        .serieCheckbox input{
+            position: absolute;
+            right: 5px;
+        }
+
+        #saveConfig{
+          width: 100%;
+          margin-top: 10px;
+        }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="seriesList"></div>
+    <button id="saveConfig">Save</button>
+  </body>
+</html>

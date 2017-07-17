@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Spoiler Alert",
+  "description": "This extension blocks social media to prevent spoilers from your favourite series",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Configure"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["checkURL.js"],
+      "run_at" : "document_end"
+    }
+  ],
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
