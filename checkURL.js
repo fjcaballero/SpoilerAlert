@@ -8,7 +8,7 @@ var defaultConfig = {
 
     "series": [
         {
-            "name": "Game of Thrones",
+            "name": "Juego de Tronos",
             "day": 1,
             "watch": true
         }/*,
